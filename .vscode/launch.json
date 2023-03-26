@@ -8,7 +8,8 @@
             "mainClass": "com.example.eurekaServer.EurekaServerApplication",
             "projectName": "eurekaServer",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53741 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=eurekaServer"
         },
         {
             "type": "java",
@@ -17,6 +18,17 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.example.EmployeeDemo.EmployeeDemoApplication",
             "projectName": "EmployeeDemo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53716 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=EmployeeDemo"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayDemoApplication<gatewayDemo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.gatewayDemo.GatewayDemoApplication",
+            "projectName": "gatewayDemo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
