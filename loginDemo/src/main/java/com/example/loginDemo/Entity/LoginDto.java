@@ -1,44 +1,69 @@
-// package com.example.loginDemo.Entity;
+package com.example.loginDemo.Entity;
 
-// public class LoginDto {
-//     private String username;
-//     private String password;
-//     // private String roles;
+import jakarta.validation.constraints.NotBlank;
 
-//     public LoginDto() {
-//     }
+public class LoginDto {
 
-//     public LoginDto(String username, String password, String roles) {
+    // @NotBlank(message = "User does not exist")
+    // private String id;
 
-//         this.username = username;
-//         this.password = password;
-//         // this.roles = roles;
-//     }
+    @NotBlank(message = "Requires password")
+    private String password;
+
+    @NotBlank(message = "Requires email")
+    private String email;
+
+    private String role;
+
+    public LoginDto() {
+    }
+
+    public LoginDto(/*String id,*/ String password, String email, String role) {
+
+        // this.id = id;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
 
 //     public LoginDto(LoginEntity loginEntity) {
 
-//         this.username = loginEntity.getUser();
+//         this.id = loginEntity.getUser();
 //         this.password = loginEntity.getPassword();
-//         // this.roles = loginEntity.getRoles();
+//         // this.email = loginEntity.getemail();
 //     }
 
-//     // public String getRoles() {
-//     //     return this.roles;
-//     // }
+    public String getEmail() {
+        return this.email;
+    }
 
-//     public String getPassword() {
-//         return this.password;
-//     }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-//     public void setPassword(String password) {
-//         this.password = password;
-//     }
+    public String getPassword() {
+        return this.password;
+    }
 
-//     public String getUser() {
-//         return this.username;
-//     }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-//     public void setUser(String username) {
-//         this.username = username;
-//     }
-// }
+    // public String getUser() {
+    //     return this.id;
+    // }
+
+    // public void setUser(String id) {
+    //     this.id = id;
+    // }
+
+
+    public String getRole() {
+        return this.role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+}

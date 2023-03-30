@@ -1,10 +1,11 @@
 package com.example.loginDemo.Service;
 
-// import java.util.List;
-import java.util.Optional;
+import java.util.List;
+// import java.util.Optional;
 
-// import com.example.loginDemo.Entity.LoginDto;
+import com.example.loginDemo.Entity.LoginDto;
 import com.example.loginDemo.Entity.LoginEntity;
+// import com.example.loginDemo.Exception.EntityNotFoundException;
 
 public interface LoginService {
     
@@ -16,11 +17,24 @@ public interface LoginService {
 
     // LoginEntity saveLogin(LoginEntity login);
 
-    // List<LoginEntity> getAllUsers();
+    public List<LoginEntity> getAllUsers();
 
     // void createNewUser(LoginDto userInput);
 
     // LoginEntity getUser(String username);
 
-    Optional<LoginEntity> findById(Long id);
+    // LoginEntity getUserByEmailAndPassword(String email, String password) throws EntityNotFoundException;
+
+    // Optional<LoginEntity> findById(Long id);
+
+    public LoginDto checkLogin(String email);
+
+	public String saveUser(LoginDto loginDto);
+
+    public static LoginDto loginDTOconvertor(LoginEntity loginEntity) {
+		return new LoginDto(loginEntity.getEmail(), loginEntity.getPassword(), loginEntity.getRole());
+	}
+	public static LoginEntity loginEntityConvertor(LoginDto loginDTO) {
+		return new LoginEntity(loginDTO.getEmail(), loginDTO.getPassword(), loginDTO.getRole());
+	}
 }
