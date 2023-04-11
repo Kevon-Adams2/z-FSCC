@@ -31,6 +31,16 @@
             "projectName": "gatewayDemo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-LoginExampleApplication<loginDemo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.loginDemo.LoginExampleApplication",
+            "projectName": "loginDemo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
