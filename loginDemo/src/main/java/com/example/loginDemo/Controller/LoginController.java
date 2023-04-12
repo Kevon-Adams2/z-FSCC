@@ -7,6 +7,7 @@ package com.example.loginDemo.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.PathVariable;
 // import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,9 @@ public class LoginController {
     private LoginService loginService;
     // private JwtGeneratorInterface jwtGenerator;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     
     public LoginController(LoginService loginService/*, JwtGeneratorInterface jwtGenerator*/) {
         this.loginService = loginService;
@@ -50,6 +54,8 @@ public class LoginController {
     @PostMapping("/register")
     public ResponseEntity<?> postUser(@RequestBody LoginEntity loginEntity) {
         try{
+            String hashPassword = passwordEncoder.encode(loginEntity.getPassword());
+            loginEntity.setPassword(hashPassword);
             loginService.saveUser(loginEntity);
             return new ResponseEntity<>(loginEntity, HttpStatus.CREATED);
         } catch (Exception e) {

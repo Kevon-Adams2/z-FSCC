@@ -14,6 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 // import com.example.loginDemo.Security.Manager.CustomAuthenticationManager;
 
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SecurityConfing {
@@ -28,6 +30,11 @@ public class SecurityConfing {
 		        .and().httpBasic();
 		return http.build();
 	}
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
 
     // @Autowired
