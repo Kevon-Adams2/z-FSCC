@@ -23,11 +23,11 @@
 //             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 //             response.getWriter().write("Username doesn't exist");
 //             response.getWriter().flush();
-//          } //catch (JWTVerificationException e) {
-//         //     response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-//         //     response.getWriter().write("JWT NOT VALID");
-//         //     response.getWriter().flush();
-//         //}
+//          } catch (JWTVerificationException e) {
+//             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+//             response.getWriter().write("JWT NOT VALID");
+//             response.getWriter().flush();
+//         }
         
         
 //         catch (InvalidLoginEntityException ex) {

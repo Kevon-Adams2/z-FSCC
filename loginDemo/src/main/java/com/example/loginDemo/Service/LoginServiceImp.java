@@ -44,6 +44,23 @@ public class LoginServiceImp implements LoginService {
         return loginEntity;
     }
 
+    // @Override
+    // public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    //     String userName, password = null;
+    //     List<GrantedAuthority> authorities = null;
+    //     List<LoginEntity> loginEntity = loginRepository.findByUserName(username);
+    //     if (loginEntity == null) {
+    //         throw new UsernameNotFoundException("Invalid id and password");
+    //     } else {
+    //         userName = loginEntity.get(0).getUserName();
+    //         password = loginEntity.get(0).getPassword();
+    //         authorities = new ArrayList<>();
+    //         authorities.add(new SimpleGrantedAuthority(loginEntity.get(0).getRole()));
+    //     }
+    //     return new User(username, password, authorities);
+    // }
+
+
     // @Autowired
     // BCryptPasswordEncoder encoder;
 

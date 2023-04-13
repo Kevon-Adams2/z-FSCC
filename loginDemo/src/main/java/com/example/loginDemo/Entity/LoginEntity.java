@@ -23,7 +23,7 @@ public class LoginEntity {
 
     private String password;
 
-    // private String role;
+    private String role;
 
 
     public LoginEntity() {
@@ -31,7 +31,7 @@ public class LoginEntity {
     }
 
 
-    public LoginEntity(int id, String userName, String password) {
+    public LoginEntity(int id, String userName, String password, String role) {
         this.id = id;
 
         // this.email = email;
@@ -40,11 +40,12 @@ public class LoginEntity {
         
         this.password = password;
 
-        // this.role = role;
+        this.role = role;
     }
 
     // public LoginEntity(LoginDto loginDto) {
-    //     this.username = loginDto.getUser();
+    //     this.id = loginDto.getId();
+    //     this.userName = loginDto.getUserName();
     //     this.password = loginDto.getPassword();
     // }
     
@@ -83,13 +84,13 @@ public class LoginEntity {
     
 
 
-    // public String getRole() {
-    //     return this.role;
-    // }
+    public String getRole() {
+        return this.role;
+    }
 
-    // public void setRole(String role) {
-    //     this.role = role;
-    // }
+    public void setRole(String role) {
+        this.role = role;
+    }
 
 
 }

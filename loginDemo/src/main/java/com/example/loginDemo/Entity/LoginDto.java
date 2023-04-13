@@ -1,69 +1,92 @@
-// package com.example.loginDemo.Entity;
+package com.example.loginDemo.Entity;
 
-// import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
-// public class LoginDto {
+public class LoginDto {
 
-//     // @NotBlank(message = "User does not exist")
-//     // private String id;
+    @NotBlank(message = "User does not exist")
+    private int id;
 
-//     @NotBlank(message = "Requires password")
-//     private String password;
+    @NotBlank(message = "Requires username")
+    private String userName;
 
-//     @NotBlank(message = "Requires email")
-//     private String email;
+    @NotBlank(message = "Requires password")
+    private String password;
 
-//     private String role;
+    // @NotBlank(message = "Requires email")
+    // private String email;
 
-//     public LoginDto() {
-//     }
+    // private String role;
 
-//     public LoginDto(/*String id,*/ String password, String email, String role) {
+    public LoginDto() {
+    }
 
-//         // this.id = id;
-//         this.password = password;
-//         this.email = email;
-//         this.role = role;
-//     }
+    public LoginDto(int id, String userName, String password/*, String email, String role*/) {
 
-// //     public LoginDto(LoginEntity loginEntity) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        // this.email = email;
+        // this.role = role;
+    }
 
-// //         this.id = loginEntity.getUser();
-// //         this.password = loginEntity.getPassword();
-// //         // this.email = loginEntity.getemail();
-// //     }
+    public LoginDto(LoginEntity loginEntity) {
 
-//     public String getEmail() {
-//         return this.email;
-//     }
+        this.id = loginEntity.getId();
+        this.userName = loginEntity.getUserName();
+        this.password = loginEntity.getPassword();
+        // this.email = loginEntity.getemail();
+    }
 
-//     public void setEmail(String email) {
-//         this.email = email;
-//     }
+    // public String getEmail() {
+    //     return this.email;
+    // }
 
-//     public String getPassword() {
-//         return this.password;
-//     }
+    // public void setEmail(String email) {
+    //     this.email = email;
+    // }
 
-//     public void setPassword(String password) {
-//         this.password = password;
-//     }
+    public String getPassword() {
+        return this.password;
+    }
 
-//     // public String getUser() {
-//     //     return this.id;
-//     // }
-
-//     // public void setUser(String id) {
-//     //     this.id = id;
-//     // }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 
-//     public String getRole() {
-//         return this.role;
-//     }
+    public int getId() {
+        return this.id;
+    }
 
-//     public void setRole(String role) {
-//         this.role = role;
-//     }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-// }
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+
+    // public String getUser() {
+    //     return this.id;
+    // }
+
+    // public void setUser(String id) {
+    //     this.id = id;
+    // }
+
+
+    // public String getRole() {
+    //     return this.role;
+    // }
+
+    // public void setRole(String role) {
+    //     this.role = role;
+    // }
+
+}

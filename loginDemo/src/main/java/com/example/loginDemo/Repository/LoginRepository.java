@@ -2,6 +2,8 @@ package com.example.loginDemo.Repository;
 
 import com.example.loginDemo.Entity.LoginEntity;
 
+import java.util.List;
+
 // import java.util.Optional;
 
 // import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,6 +20,8 @@ public interface LoginRepository extends CrudRepository<LoginEntity, String> {
     // Optional<LoginEntity> findById(Long id);
 
     public LoginEntity findByUserNameAndPassword(String userName, String password);
+
+    List<LoginEntity> findByUserName(String userName);
 
     // Optional<LoginEntity> findByEmail(String email);
     // Optional<LoginEntity> findByPasswordOrEmail(String password, String email);
